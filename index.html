@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snowdon23 AgroTrade</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #4B0082;
+      color: white;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+    section {
+      padding: 2rem;
+    }
+    footer {
+      background-color: #4B0082;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      position: relative;
+    }
+    .button {
+      display: inline-block;
+      background-color: #F5C518;
+      color: #4B0082;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+    #backToTop {
+      position: fixed;
+      bottom: 40px;
+      right: 20px;
+      background-color: #4B0082;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <strong>Snowdon23 AgroTrade</strong>
+    <nav style="float:right;">
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section style="background-color: #4B0082; color: white; text-align: center;">
+    <h1>Trust, transparency and connecting African agro products to the global world.</h1>
+    <p>Premium cash crops straight from Nigeria’s farms to global markets.</p>
+    <a href="#products" class="button">Explore Our Products</a>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Snowdon23 AgroTrade is committed to linking African farmers and producers with international buyers. We specialize in exporting top-quality agro commodities like cashew kernels, shea nuts, and more with integrity and professionalism.</p>
+  </section>
+
+  <section id="products">
+    <h2>Our Products</h2>
+    <ul>
+      <li>Cashew Kernels (WW180, WW240, WW320, WW450)</li>
+      <li>Shea Nuts</li>
+      <li>Sesame Seeds</li>
+      <li>Cocoa Beans</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: solomon@snowdon23resource.com</p>
+    <p>Phone: +234 813 884 1388</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Snowdon23 AgroTrade. All rights reserved.</p>
+  </footer>
+
+  <button id="backToTop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">Back to Top</button>
+
+  <script>
+    window.onscroll = function() {
+      document.getElementById("backToTop").style.display =
+        document.documentElement.scrollTop > 300 ? "block" : "none";
+    };
+  </script>
+</body>
+</html>
