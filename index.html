@@ -1,90 +1,140 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Snowdon23 AgroTrade | Premium African Crops</title>
+  <meta name="description" content="Export premium African agro products like cashew kernel and shea nuts from Nigeria to global markets via Snowdon23 Resource Ltd.">
+  <title>Snowdon23 AgroTrade</title>
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; color: #333; line-height: 1.6; }
-    header { background-color: #3a0ca3; color: white; padding: 20px 0; }
-    header nav { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
-    header nav a { color: white; text-decoration: none; margin-left: 20px; }
-    .hero { background-color: #3a0ca3; color: white; height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 20px; }
-    .hero h1 { font-size: 2.5em; margin: 0; }
-    .hero p { font-size: 1.2em; }
-    .btn { background-color: #f9c74f; color: #3a0ca3; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin-top: 20px; }
-    section { padding: 60px 20px; max-width: 1200px; margin: auto; }
-    .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-    .product-card { border: 1px solid #ddd; padding: 20px; border-radius: 10px; text-align: center; }
-    .product-card img { max-width: 100%; height: auto; border-radius: 5px; }
-    footer { background: #222; color: #aaa; text-align: center; padding: 20px 0; }
-    footer a { color: #f9c74f; text-decoration: none; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+    header {
+      background-color: #3d1b88;
+      padding: 1rem;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      background-color: #3d1b88;
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    .hero h1 {
+      font-size: 2rem;
+    }
+    .cta-button {
+      display: inline-block;
+      background-color: #f4c542;
+      color: #3d1b88;
+      padding: 0.75rem 1.5rem;
+      margin-top: 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    .why-us ul {
+      list-style: none;
+      padding: 0;
+    }
+    .why-us li {
+      margin-bottom: 0.75rem;
+    }
+    .product-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .card {
+      flex: 1 1 250px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1rem;
+      background-color: #fafafa;
+    }
+    .cta-section {
+      background-color: #f4c542;
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #3d1b88;
+    }
+    footer {
+      background-color: #3d1b88;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
-
   <header>
+    <div><strong>Snowdon23 AgroTrade</strong></div>
     <nav>
-      <div class="logo">Snowdon23 AgroTrade</div>
-      <div class="menu">
-        <a href="#about">About</a>
-        <a href="#products">Products</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-      </div>
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <section class="hero">
-    <div>
-      <h1>Trust, transparency and connecting African agro products to the global world.</h1>
-      <p>Premium cash crops straight from Nigeria’s farms to global markets.</p>
-      <a href="#products" class="btn">Explore Our Products</a>
-    </div>
+    <h1>Trust, transparency and connecting African agro products to the global world.</h1>
+    <p>Premium cash crops straight from Nigeria’s farms to global markets.</p>
+    <a href="#products" class="cta-button">Explore Our Products</a>
   </section>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p>Snowdon23 AgroTrade is dedicated to sourcing and exporting high-quality agricultural cash crops. We combine ethical practices, traceability, and logistics expertise to deliver globally.</p>
+  <section class="why-us" id="about">
+    <h2>Why Snowdon23 AgroTrade?</h2>
+    <ul>
+      <li>✅ Premium-grade agro exports (Cashew WW320, Shea Nuts, etc.)</li>
+      <li>✅ Direct sourcing from Nigerian farms</li>
+      <li>✅ Transparent pricing and shipping process</li>
+      <li>✅ Fast response, worldwide delivery</li>
+    </ul>
   </section>
 
-  <section id="products">
-    <h2>Our Products</h2>
-    <div class="products-grid">
-      <div class="product-card">
-        <img src="https://via.placeholder.com/300x200?text=Cashew+Kernels" alt="Cashew Kernels">
-        <h3>Cashew Kernels</h3>
-        <p>Grades WW320, WW240. Premium export quality.</p>
+  <section class="products-preview" id="products">
+    <h2>Our Top Export Products</h2>
+    <div class="product-cards">
+      <div class="card">
+        <h3>Cashew Kernel WW320</h3>
+        <p>High-quality raw cashew, 50kg bags, shipped globally.</p>
       </div>
-      <div class="product-card">
-        <img src="https://via.placeholder.com/300x200?text=Shea+Nuts" alt="Shea Nuts">
+      <div class="card">
         <h3>Shea Nuts</h3>
-        <p>Raw, clean, suitable for cosmetic and food processing.</p>
-      </div>
-      <div class="product-card">
-        <img src="https://via.placeholder.com/300x200?text=Dry+Ginger" alt="Dry Ginger">
-        <h3>Dry Ginger</h3>
-        <p>Sun-dried, low-moisture ginger for export markets.</p>
+        <p>Unprocessed whole shea nuts — ideal for European buyers.</p>
       </div>
     </div>
   </section>
 
-  <section id="services">
-    <h2>What We Offer</h2>
-    <p>Export logistics, quality assurance, certification, traceability, global shipping and documentation support.</p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: info@snowdon23resource.com</p>
-    <p>WhatsApp: +234-XXX-XXXXXXX</p>
-    <p>Address: Lagos, Nigeria</p>
+  <section class="cta-section">
+    <h2>Ready to import premium Nigerian cash crops?</h2>
+    <a href="#contact" class="cta-button">Contact Us for a Quote</a>
   </section>
 
   <footer>
-    &copy; 2025 Snowdon23 AgroTrade | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a>
+    <p>&copy; 2025 Snowdon23 Resource Ltd. All rights reserved.</p>
+    <p>Email: info@snowdon23resource.com</p>
   </footer>
-
 </body>
 </html>
