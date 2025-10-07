@@ -1,36 +1,92 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Snowdon23 AgroTrade connects African farmers to global markets."/>
+  <meta name="description" content="Snowdon23 AgroTrade connects African agro products to the global world."/>
   <title>Snowdon23 AgroTrade</title>
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
     header {
-      position: sticky; top: 0; background: #4B0082; color: #fff;
-      padding: 1rem; z-index: 1000; display: flex; justify-content: space-between; align-items: center;
+      position: sticky;
+      top: 0;
+      background: #4B0082;
+      color: #fff;
+      padding: 1rem;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    header h1 { font-size: 1.2rem; margin: 0; }
-    nav ul { list-style: none; display: flex; margin: 0; padding: 0; gap: 1rem; }
-    nav a { color: #fff; text-decoration: none; font-weight: bold; }
-    section { padding: 2rem 1rem; text-align: center; }
-    .hero { background: #4B0082; color: #fff; padding: 4rem 1rem; }
-    .hero h2 { font-size: 2rem; margin: 1rem 0; }
+    header h1 {
+      font-size: 1.3rem;
+      margin: 0;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      gap: 1rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    .hero {
+      background: #4B0082;
+      color: #fff;
+      padding: 4rem 1rem;
+    }
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
     .btn {
-      background: #FFD700; color: #4B0082; border: none; padding: 1rem 2rem;
-      font-size: 1rem; cursor: pointer; border-radius: 8px; text-decoration: none;
-    }
-    #backToTop {
-      position: fixed; bottom: 20px; right: 20px; display: none;
-      background: #FFD700; color: #4B0082; border: none; padding: 0.75rem;
-      border-radius: 50%; font-size: 1.2rem; cursor: pointer;
+      background: #FFD700;
+      color: #4B0082;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      text-decoration: none;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-block;
     }
     footer {
-      background: #4B0082; color: white; padding: 2rem 1rem; text-align: center;
+      background: #4B0082;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
     }
-    footer a { color: #FFD700; text-decoration: none; margin: 0 0.5rem; }
+    footer a {
+      color: #FFD700;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: none;
+      background: #FFD700;
+      color: #4B0082;
+      border: none;
+      padding: 0.75rem;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    /* Contact / form styles */
     #contact {
       background: #f8f5fc;
       padding: 3rem 1rem;
@@ -47,80 +103,85 @@
     }
     .airtable-embed {
       width: 100%;
-      height: 800px;
+      height: 700px;
       border: none;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
     @media (max-width: 768px) {
       .airtable-embed {
-        height: 1000px;
+        height: 900px;
       }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Snowdon23 AgroTrade</h1>
-  <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#products">Products</a></li>
-      <li><a href="#contact">Contact</a></li>
+  <header>
+    <h1>Snowdon23 AgroTrade</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Trust, transparency and connecting African agro products to the global world.</h2>
+    <p>Premium cash crops straight from Nigeria’s farms to global markets.</p>
+    <a href="#products" class="btn">Explore Our Products</a>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Snowdon23 AgroTrade is committed to linking African farmers and producers with international buyers. We specialize in exporting top-quality agro commodities like cashew kernels, shea nuts, and more with integrity and professionalism.</p>
+  </section>
+
+  <section id="products">
+    <h2>Our Products</h2>
+    <p>We offer premium export products such as:</p>
+    <ul style="list-style: none; padding: 0;">
+      <li>✓ Raw Cashew Kernels</li>
+      <li>✓ Shea Nuts</li>
+      <li>✓ Other cash crops on request</li>
     </ul>
-  </nav>
-</header>
+  </section>
 
-<section class="hero">
-  <h2>Trust, transparency and connecting African agro products to the global world.</h2>
-  <p>Premium cash crops straight from Nigeria’s farms to global markets.</p>
-  <a href="#products" class="btn">Explore Our Products</a>
-</section>
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Please fill the form below to send your inquiry or request:</p>
+    <iframe class="airtable-embed"
+            src="https://airtable.com/embed/apptu7Bf35Da3H3wD/shraAl6bJKPr5YxnI?backgroundColor=purple"
+            frameborder="0"
+            onmousewheel=""
+            width="100%"
+            height="700">
+    </iframe>
+  </section>
 
-<section id="about">
-  <h2>About Us</h2>
-  <p>Snowdon23 AgroTrade is committed to linking African farmers and producers with international buyers. We specialize in exporting top-quality agro commodities like cashew kernels, shea nuts, and more with integrity and professionalism.</p>
-</section>
+  <footer>
+    <p>&copy; 2025 Snowdon23 AgroTrade. All rights reserved.</p>
+    <p>
+      <a href="mailto:info@snowdon23resource.com">info@snowdon23resource.com</a> |
+      <a href="https://wa.me/2348138841388" target="_blank">WhatsApp</a>
+    </p>
+    <p>
+      <a href="https://facebook.com" target="_blank">Facebook</a>
+      <a href="https://twitter.com" target="_blank">Twitter</a>
+      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    </p>
+  </footer>
 
-<section id="products">
-  <h2>Our Products</h2>
-  <p>We offer premium-quality export products from Nigeria:</p>
-  <ul style="list-style: none; padding: 0;">
-    <li>✓ Raw Cashew Kernels</li>
-    <li>✓ Shea Nuts</li>
-    <li>✓ Other cash crops on request</li>
-  </ul>
-</section>
+  <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
 
-<section id="contact">
-  <h2>Contact Us</h2>
-  <p>Please use the form below to send your inquiry or request:</p>
-  <iframe class="airtable-embed"
-          src="https://airtable.com/embed/apptu7Bf35Da3H3wD/shraAl6bJKPr5YxnI?backgroundColor=purple"
-          frameborder="0" onmousewheel="" width="100%" height="800">
-  </iframe>
-</section>
+  <script>
+    window.addEventListener('scroll', () => {
+      document.getElementById('backToTop').style.display =
+        window.scrollY > 200 ? 'block' : 'none';
+    });
+  </script>
 
-<footer>
-  <p>&copy; 2025 Snowdon23 AgroTrade. All rights reserved.</p>
-  <p>
-    <a href="mailto:info@snowdon23resource.com">info@snowdon23resource.com</a> |
-    <a href="https://wa.me/2348138841388,+447932727451" target="_blank">WhatsApp</a>
-  </p>
-  <p>
-    <a href="https://facebook.com" target="_blank">Facebook</a>
-    <a href="https://twitter.com" target="_blank">Twitter</a>
-    <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-  </p>
-</footer>
-
-<button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
-<script>
-  window.addEventListener('scroll', () => {
-    document.getElementById('backToTop').style.display =
-      window.scrollY > 200 ? 'block' : 'none';
-  });
-</script>
 </body>
 </html>
