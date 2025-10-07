@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Snowdon23 AgroTrade connects African farmers to global markets."/>
+  <title>Snowdon23 AgroTrade</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; }
+    header {
+      position: sticky; top: 0; background: #4B0082; color: #fff;
+      padding: 1rem; z-index: 1000; display: flex; justify-content: space-between; align-items: center;
+    }
+    header h1 { font-size: 1.2rem; margin: 0; }
+    nav ul { list-style: none; display: flex; margin: 0; padding: 0; gap: 1rem; }
+    nav a { color: #fff; text-decoration: none; font-weight: bold; }
+    section { padding: 2rem 1rem; text-align: center; }
+    .hero { background: #4B0082; color: #fff; padding: 4rem 1rem; }
+    .hero h2 { font-size: 2rem; margin: 1rem 0; }
+    .button {
+      background: #FFD700; color: #4B0082; border: none; padding: 1rem 2rem;
+      font-size: 1rem; cursor: pointer; border-radius: 8px; text-decoration: none;
+    }
+    footer {
+      background: #4B0082; color: white; padding: 2rem 1rem; text-align: center;
+    }
+    footer a { color: #FFD700; text-decoration: none; margin: 0 0.5rem; }
+    #backToTop {
+      position: fixed; bottom: 20px; right: 20px; display: none;
+      background: #FFD700; color: #4B0082; border: none; padding: 0.75rem;
+      border-radius: 50%; font-size: 1.2rem; cursor: pointer;
+    }
+    iframe { max-width: 100%; border-radius: 10px; }
+  </style>
+
+<style>
+  #contact {
+    background-color: #f8f5fc;
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+
+  #contact h2 {
+    font-size: 2rem;
+    color: #4B0082;
+    margin-bottom: 1rem;
+  }
+
+  #contact p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #444;
+  }
+
+  .airtable-embed {
+    width: 100%;
+    max-width: 100%;
+    height: 750px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .airtable-embed {
+      height: 1000px;
+    }
+  }
+</style>
+
+</head>
+<body>
+
+<header>
+  <h1>Snowdon23 AgroTrade</h1>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Trust, transparency and connecting African agro products to the global world.</h2>
+  <p>Premium cash crops straight from Nigeria’s farms to global markets.</p>
+  <a href="#products" class="button">Explore Our Products</a>
+</section>
+
+<section id="about">
+  <h2>About Us</h2>
+  <p>Snowdon23 AgroTrade is committed to linking African farmers and producers with international buyers. We specialize in exporting top-quality agro commodities like cashew kernels, shea nuts, and more with integrity and professionalism.</p>
+</section>
+
+<section id="products">
+  <h2>Our Products</h2>
+  <p>We offer a variety of premium export-ready products such as:</p>
+  <ul style="list-style: none; padding: 0;">
+    <li>✓ Raw Cashew Kernels</li>
+    <li>✓ Shea Nuts</li>
+    <li>✓ Other cash crops by request</li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Fill the form below to reach out to Snowdon23 AgroTrade:</p>
+  <iframe class="airtable-embed"
+    src="https://airtable.com/embed/appdOzspzaE5w0Caq/shrUbvbkppnUDCN4z?backgroundColor=purple"
+    frameborder="0" onmousewheel="" width="100%" height="533"
+    style="background: transparent; border: 1px solid #ccc;"></iframe>
+</section>
+
+<footer>
+  <p>&copy; 2025 Snowdon23 AgroTrade. All rights reserved.</p>
+  <p>
+    <a href="mailto:info@snowdon23resource.com">info@snowdon23resource.com</a> |
+    <a href="https://wa.me/2348138841388" target="_blank">WhatsApp</a>
+  </p>
+  <p>
+    <a href="https://facebook.com" target="_blank">Facebook</a>
+    <a href="https://twitter.com" target="_blank">Twitter</a>
+    <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+  </p>
+</footer>
+
+<button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('backToTop').style.display =
+      window.scrollY > 200 ? 'block' : 'none';
+  });
+</script>
+
+</body>
+</html>
