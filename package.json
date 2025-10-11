@@ -1,0 +1,9 @@
+{
+  "name": "snowdon23-agrotrade",
+  "version": "1.0.0",
+  "description": "Snowdon23 AgroTrade website functions",
+  "main": "index.js",
+  "dependencies": {
+    "nodemailer": "^6.9.9"
+  }
+}
