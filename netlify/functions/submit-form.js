@@ -2,7 +2,6 @@
 const https = require('https');
 
 exports.handler = async (event, context) => {
-  // Only allow POST requests
   if (event.httpMethod !== 'POST') {
     return {
       statusCode: 405,
@@ -11,23 +10,23 @@ exports.handler = async (event, context) => {
   }
 
   try {
-    // Get form data from request body
     const formData = JSON.parse(event.body);
 
-    // Airtable configuration
     const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY;
     const AIRTABLE_BASE_ID = 'apptu7Bf35Da3H3wD';
     const AIRTABLE_TABLE_NAME = 'Request form';
 
-    // ✅ Match these field names EXACTLY as they appear in Airtable
+    // ✅ Match Airtable field names exactly
     const airtableData = JSON.stringify({
       fields: {
         'Full Name': formData.fullName,
-        'Email': formData.email,                // ✅ renamed from Address → Email
+        'Email Address': formData.email, // ✅ fixed name
+        'Phone Number': formData.phone || '', // optional
         'Company Name': formData.company || '',
-        'Interested Products': formData.product, // remove array brackets unless field type is multi-select
+        'Interested Products': formData.product, // if multi-select, this works fine
         'Message / Request': formData.message,
-        'Lead Source': 'Website Contact Form'
+        'Lead Source': 'Website Contact Form',
+        'Date Submitted': new Date().toISOString()
       }
     });
 
