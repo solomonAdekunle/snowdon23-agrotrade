@@ -1,4 +1,6 @@
 // Netlify Function to handle Airtable form submissions
+const https = require('https');
+
 exports.handler = async (event, context) => {
   // Only allow POST requests
   if (event.httpMethod !== 'POST') {
@@ -18,7 +20,7 @@ exports.handler = async (event, context) => {
     const AIRTABLE_TABLE_NAME = 'Request form';
 
     // Prepare data for Airtable
-    const airtableData = {
+    const airtableData = JSON.stringify({
       fields: {
         'Full Name': formData.fullName,
         'Address': formData.email, // Email goes in Address field
@@ -27,28 +29,45 @@ exports.handler = async (event, context) => {
         'Message / Request': formData.message,
         'Lead Source': 'Website Contact Form'
       }
+    });
+
+    // Prepare request options
+    const options = {
+      hostname: 'api.airtable.com',
+      path: `/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(AIRTABLE_TABLE_NAME)}`,
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${AIRTABLE_API_KEY}`,
+        'Content-Type': 'application/json',
+        'Content-Length': Buffer.byteLength(airtableData)
+      }
     };
 
-    // Send to Airtable
-    const response = await fetch(
-      `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(AIRTABLE_TABLE_NAME)}`,
-      {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${AIRTABLE_API_KEY}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(airtableData)
-      }
-    );
+    // Make request to Airtable
+    const result = await new Promise((resolve, reject) => {
+      const req = https.request(options, (res) => {
+        let data = '';
+        
+        res.on('data', (chunk) => {
+          data += chunk;
+        });
+        
+        res.on('end', () => {
+          if (res.statusCode >= 200 && res.statusCode < 300) {
+            resolve(JSON.parse(data));
+          } else {
+            reject(new Error(`Airtable returned status ${res.statusCode}: ${data}`));
+          }
+        });
+      });
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      console.error('Airtable Error:', errorData);
-      throw new Error('Failed to submit to Airtable');
-    }
+      req.on('error', (error) => {
+        reject(error);
+      });
 
-    const result = await response.json();
+      req.write(airtableData);
+      req.end();
+    });
 
     return {
       statusCode: 200,
