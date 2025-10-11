@@ -1,5 +1,5 @@
 /**
- * Snowdon23 AgroTrade – Form Handler
+ * Snowdon23 AgroTrade – Full Form Handler
  * Saves leads to Airtable and sends branded Gmail confirmation + admin notifications
  * Requires environment variables:
  *  AIRTABLE_API_KEY
@@ -13,10 +13,7 @@ const nodemailer = require("nodemailer");
 
 exports.handler = async (event) => {
   if (event.httpMethod !== "POST") {
-    return {
-      statusCode: 405,
-      body: JSON.stringify({ error: "Method not allowed" }),
-    };
+    return { statusCode: 405, body: JSON.stringify({ error: "Method not allowed" }) };
   }
 
   try {
@@ -25,7 +22,7 @@ exports.handler = async (event) => {
     const AIRTABLE_BASE_ID = "apptu7Bf35Da3H3wD";
     const AIRTABLE_TABLE_NAME = "Request form";
 
-    // ---- Save to Airtable ----
+    /* ---------- Save to Airtable ---------- */
     const airtablePayload = JSON.stringify({
       fields: {
         "Full Name": formData.fullName,
@@ -36,51 +33,50 @@ exports.handler = async (event) => {
         "Message / Request": formData.message,
         "Lead Source": "Website Contact Form",
         "Date Submitted": new Date().toISOString(),
-      },
+        "Source": "Website Form - Snowdon23 AgroTrade"
+      }
     });
 
     const options = {
       hostname: "api.airtable.com",
-      path: `/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(
-        AIRTABLE_TABLE_NAME
-      )}`,
+      path: `/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(AIRTABLE_TABLE_NAME)}`,
       method: "POST",
       headers: {
         Authorization: `Bearer ${AIRTABLE_API_KEY}`,
         "Content-Type": "application/json",
-        "Content-Length": Buffer.byteLength(airtablePayload),
-      },
+        "Content-Length": Buffer.byteLength(airtablePayload)
+      }
     };
 
     await new Promise((resolve, reject) => {
       const req = https.request(options, (res) => {
-        let data = "";
-        res.on("data", (chunk) => (data += chunk));
-        res.on("end", () => {
-          if (res.statusCode >= 200 && res.statusCode < 300) {
-            resolve();
-          } else {
-            reject(new Error(`Airtable returned status ${res.statusCode}: ${data}`));
-          }
-        });
+        res.on("data", () => {});
+        res.on("end", () =>
+          res.statusCode >= 200 && res.statusCode < 300
+            ? resolve()
+            : reject(new Error(`Airtable returned status ${res.statusCode}`))
+        );
       });
       req.on("error", reject);
       req.write(airtablePayload);
       req.end();
     });
 
-    // ---- Send Gmail notifications ----
+    /* ---------- Send Gmail Notifications ---------- */
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
         user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_PASS,
-      },
+        pass: process.env.GMAIL_PASS
+      }
     });
 
-    // Branded buyer email (purple + gold)
+    const logoUrl = "https://snowdon23-agrotrade.netlify.app/images/logo.png"; // update if different
+
+    // Buyer confirmation
     const buyerMail = {
       from: `"Snowdon23 AgroTrade" <${process.env.GMAIL_USER}>`,
+      replyTo: "info@snowdon23resources.com",
       to: formData.email,
       subject: "We received your request – Snowdon23 AgroTrade",
       html: `
@@ -90,6 +86,8 @@ exports.handler = async (event) => {
                   border:1px solid #e0e0e0;">
         <div style="background:linear-gradient(135deg,#5B2C91,#7B3CB8);
                     color:#fff;padding:25px 20px;text-align:center;">
+          <img src="${logoUrl}" alt="Snowdon23 AgroTrade"
+               style="max-width:120px;margin-bottom:10px;border-radius:10px;" />
           <h1 style="margin:0;font-size:24px;">Snowdon23 AgroTrade</h1>
           <p style="margin-top:6px;font-size:15px;color:#FFD700;">
             Connecting African Agro-Products to the Global World
@@ -113,19 +111,19 @@ exports.handler = async (event) => {
                info@snowdon23resources.com</a>.
           </p>
         </div>
-        <div style="background:#2A1448;color:#fff;padding:15px;text-align:center;
-                    font-size:13px;">
+        <div style="background:#2A1448;color:#fff;padding:15px;text-align:center;font-size:13px;">
           <p style="margin:0;">
             © 2025 Snowdon23 Resource Ltd | 5 Gloryland Estate CDA, Ogbogbo Ijebu, Ogun State Nigeria
           </p>
           <p style="margin-top:4px;color:#FFD700;">Transparency • Trust • Trade</p>
         </div>
-      </div>`,
+      </div>`
     };
 
-    // Admin notification email
+    // Admin notification
     const adminMail = {
       from: `"Snowdon23 AgroTrade" <${process.env.GMAIL_USER}>`,
+      replyTo: formData.email,
       to: process.env.ADMIN_EMAILS,
       subject: `New form submission from ${formData.fullName}`,
       html: `
@@ -134,6 +132,8 @@ exports.handler = async (event) => {
                   border:1px solid #e0e0e0;border-radius:10px;overflow:hidden;">
         <div style="background:linear-gradient(135deg,#5B2C91,#7B3CB8);
                     color:#fff;padding:18px 20px;">
+          <img src="${logoUrl}" alt="Snowdon23 AgroTrade"
+               style="max-width:100px;margin-bottom:8px;border-radius:8px;" />
           <h2 style="margin:0;font-size:20px;">New Website Inquiry</h2>
           <p style="margin-top:4px;font-size:14px;color:#FFD700;">
             From Snowdon23 AgroTrade Form
@@ -147,31 +147,19 @@ exports.handler = async (event) => {
           <p><strong>Interested Product:</strong> ${formData.product}</p>
           <p><strong>Message / Request:</strong><br>${formData.message}</p>
         </div>
-        <div style="background:#2A1448;color:#FFD700;padding:12px;text-align:center;
-                    font-size:13px;">
+        <div style="background:#2A1448;color:#FFD700;padding:12px;text-align:center;font-size:13px;">
           <p style="margin:0;">Lead Source: Website Contact Form</p>
         </div>
-      </div>`,
+      </div>`
     };
 
     await transporter.sendMail(buyerMail);
     await transporter.sendMail(adminMail);
 
-    return {
-      statusCode: 200,
-      body: JSON.stringify({
-        success: true,
-        message: "Form submitted successfully",
-      }),
-    };
+    return { statusCode: 200, body: JSON.stringify({ success: true, message: "Form submitted successfully" }) };
+
   } catch (error) {
     console.error("Error:", error);
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
-        error: "Failed to submit form",
-        details: error.message,
-      }),
-    };
+    return { statusCode: 500, body: JSON.stringify({ error: "Failed to submit form", details: error.message }) };
   }
 };
