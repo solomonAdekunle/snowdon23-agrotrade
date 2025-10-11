@@ -20,10 +20,10 @@ exports.handler = async (event, context) => {
     const airtableData = JSON.stringify({
       fields: {
         'Full Name': formData.fullName,
-        'Email Address': formData.email, // ✅ fixed name
-        'Phone Number': formData.phone || '', // optional
+        'Email Address': formData.email,
+        'Phone Number': formData.phone || '',
         'Company Name': formData.company || '',
-        'Interested Products': formData.product, // if multi-select, this works fine
+        'Interested Products': [formData.product], // ✅ wrapped in array for multi-select
         'Message / Request': formData.message,
         'Lead Source': 'Website Contact Form',
         'Date Submitted': new Date().toISOString()
