@@ -14,24 +14,23 @@ exports.handler = async (event, context) => {
     // Get form data from request body
     const formData = JSON.parse(event.body);
 
-    // Airtable configuration from environment variables
+    // Airtable configuration
     const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY;
     const AIRTABLE_BASE_ID = 'apptu7Bf35Da3H3wD';
     const AIRTABLE_TABLE_NAME = 'Request form';
 
-    // Prepare data for Airtable
+    // ✅ Match these field names EXACTLY as they appear in Airtable
     const airtableData = JSON.stringify({
       fields: {
         'Full Name': formData.fullName,
-        'Address': formData.email, // Email goes in Address field
+        'Email': formData.email,                // ✅ renamed from Address → Email
         'Company Name': formData.company || '',
-        'Interested Products': [formData.product], // Array format
+        'Interested Products': formData.product, // remove array brackets unless field type is multi-select
         'Message / Request': formData.message,
         'Lead Source': 'Website Contact Form'
       }
     });
 
-    // Prepare request options
     const options = {
       hostname: 'api.airtable.com',
       path: `/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(AIRTABLE_TABLE_NAME)}`,
@@ -43,15 +42,10 @@ exports.handler = async (event, context) => {
       }
     };
 
-    // Make request to Airtable
     const result = await new Promise((resolve, reject) => {
       const req = https.request(options, (res) => {
         let data = '';
-        
-        res.on('data', (chunk) => {
-          data += chunk;
-        });
-        
+        res.on('data', (chunk) => (data += chunk));
         res.on('end', () => {
           if (res.statusCode >= 200 && res.statusCode < 300) {
             resolve(JSON.parse(data));
@@ -61,30 +55,26 @@ exports.handler = async (event, context) => {
         });
       });
 
-      req.on('error', (error) => {
-        reject(error);
-      });
-
+      req.on('error', (error) => reject(error));
       req.write(airtableData);
       req.end();
     });
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ 
-        success: true, 
+      body: JSON.stringify({
+        success: true,
         message: 'Form submitted successfully',
-        id: result.id 
+        id: result.id
       })
     };
-
   } catch (error) {
     console.error('Error:', error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ 
-        error: 'Failed to submit form', 
-        details: error.message 
+      body: JSON.stringify({
+        error: 'Failed to submit form',
+        details: error.message
       })
     };
   }
