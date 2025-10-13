@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Confirmation - Snowdon23 AgroTrade</title>
+</head>
+<body style="margin:0;padding:0;font-family:Arial,sans-serif;background-color:#f4f4f4">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f4f4f4;padding:20px">
+    <tr>
+      <td align="center">
+        <table width="600" cellpadding="0" cellspacing="0" style="background-color:#ffffff;border-radius:10px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,0.1)">
+          
+          <!-- Header with Success Icon -->
+          <tr>
+            <td style="background:linear-gradient(135deg,#5B2C91 0%,#7B3CB8 100%);padding:40px;text-align:center">
+              <div style="width:80px;height:80px;background-color:#FFD700;border-radius:50%;margin:0 auto 20px;line-height:80px;font-size:50px">✓</div>
+              <h1 style="color:#FFD700;margin:0;font-size:28px">Order Confirmed!</h1>
+              <p style="color:#ffffff;margin:10px 0 0;font-size:16px">Thank you for your order</p>
+            </td>
+          </tr>
+
+          <!-- Body Content -->
+          <tr>
+            <td style="padding:40px 30px">
+              <h2 style="color:#5B2C91;margin:0 0 20px;font-size:22px">Hi [CUSTOMER_NAME],</h2>
+              
+              <p style="color:#333;line-height:1.6;margin:0 0 20px;font-size:15px">
+                We've received your order and are excited to work with you! Your order is now being processed and we'll keep you updated every step of the way.
+              </p>
+
+              <!-- Order Summary Box -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f8f9fa;border-radius:8px;margin:25px 0;border:2px solid #FFD700">
+                <tr>
+                  <td style="padding:25px">
+                    <h3 style="color:#5B2C91;margin:0 0 20px;font-size:20px">Order Summary</h3>
+                    
+                    <table width="100%" cellpadding="8" cellspacing="0" style="font-size:14px">
+                      <tr>
+                        <td style="color:#666;border-bottom:1px solid #e0e0e0"><strong>Order Number:</strong></td>
+                        <td style="color:#333;border-bottom:1px solid #e0e0e0;text-align:right"><strong style="color:#5B2C91;font-size:16px">[ORDER_NUMBER]</strong></td>
+                      </tr>
+                      <tr>
+                        <td style="color:#666;border-bottom:1px solid #e0e0e0"><strong>Order Date:</strong></td>
+                        <td style="color:#333;border-bottom:1px solid #e0e0e0;text-align:right">[ORDER_DATE]</td>
+                      </tr>
+                      <tr>
+                        <td style="color:#666;border-bottom:1px solid #e0e0e0"><strong>Product:</strong></td>
+                        <td style="color:#333;border-bottom:1px solid #e0e0e0;text-align:right">[PRODUCT_NAME]</td>
+                      </tr>
+                      <tr>
+                        <td style="color:#666;border-bottom:1px solid #e0e0e0"><strong>Quantity:</strong></td>
+                        <td style="color:#333;border-bottom:1px solid #e0e0e0;text-align:right">[QUANTITY] Metric Tons</td>
+                      </tr>
+                      <tr>
+                        <td style="color:#666;border-bottom:1px solid #e0e0e0"><strong>Total Amount:</strong></td>
+                        <td style="color:#333;border-bottom:1px solid #e0e0e0;text-align:right;font-size:18px"><strong style="color:#5B2C91">$[TOTAL_AMOUNT]</strong></td>
+                      </tr>
+                      <tr>
+                        <td style="color:#666;border-bottom:1px solid #e0e0e0"><strong>Shipping Terms:</strong></td>
+                        <td style="color:#333;border-bottom:1px solid #e0e0e0;text-align:right">[SHIPPING_TERMS]</td>
+                      </tr>
+                      <tr>
+                        <td style="color:#666"><strong>Est. Delivery:</strong></td>
+                        <td style="color:#333;text-align:right">[DELIVERY_DATE]</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- What Happens Next -->
+              <h3 style="color:#5B2C91;margin:30px 0 15px;font-size:18px">📋 What Happens Next?</h3>
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="padding:12px 0;border-bottom:1px solid #f0f0f0">
+                    <table cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td style="width:30px;height:30px;background-color:#5B2C91;color:#FFD700;border-radius:50%;text-align:center;font-weight:bold;vertical-align:middle">1</td>
+                        <td style="padding-left:15px">
+                          <strong style="color:#5B2C91">Order Processing (1-2 days)</strong>
+                          <p style="color:#666;margin:5px 0 0;font-size:14px">We verify your order details and prepare documentation</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:12px 0;border-bottom:1px solid #f0f0f0">
+                    <table cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td style="width:30px;height:30px;background-color:#5B2C91;color:#FFD700;border-radius:50%;text-align:center;font-weight:bold;vertical-align:middle">2</td>
+                        <td style="padding-left:15px">
+                          <strong style="color:#5B2C91">Quality Inspection (2-3 days)</strong>
+                          <p style="color:#666;margin:5px 0 0;font-size:14px">Your products undergo rigorous quality control checks</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:12px 0;border-bottom:1px solid #f0f0f0">
+                    <table cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td style="width:30px;height:30px;background-color:#5B2C91;color:#FFD700;border-radius:50%;text-align:center;font-weight:bold;vertical-align:middle">3</td>
+                        <td style="padding-left:15px">
+                          <strong style="color:#5B2C91">Packaging & Documentation (2-3 days)</strong>
+                          <p style="color:#666;margin:5px 0 0;font-size:14px">Products are packed and export documents prepared</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:12px 0">
+                    <table cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td style="width:30px;height:30px;background-color:#5B2C91;color:#FFD700;border-radius:50%;text-align:center;font-weight:bold;vertical-align:middle">4</td>
+                        <td style="padding-left:15px">
+                          <strong style="color:#5B2C91">Shipping & Delivery (3-6 weeks)</strong>
+                          <p style="color:#666;margin:5px 0 0;font-size:14px">Your order ships and we provide tracking information</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+
+              <p style="color:#333;line-height:1.6;margin:20px 0;font-size:15px">
+                We'll send you regular updates via email and WhatsApp. You can also contact us anytime for status updates.
+              </p>
+
+              <!-- CTA Buttons -->
+              <table cellpadding="0" cellspacing="0" style="margin:30px 0">
+                <tr>
+                  <td align="center">
+                    <table cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td style="background-color:#FFD700;border-radius:50px;padding:15px 30px;">
+                          <a href="mailto:info@snowdon23resource.com" style="color:#5B2C91;text-decoration:none;font-weight:bold;font-size:15px">📧 Email Us</a>
+                        </td>
+                        <td style="padding:0 10px"></td>
+                        <td style="background-color:#25D366;border-radius:50px;padding:15px 30px">
+                          <a href="https://wa.me/447932727451" style="color:#ffffff;text-decoration:none;font-weight:bold;font-size:15px">💬 WhatsApp</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+
+              <p style="color:#333;line-height:1.6;margin:25px 0 0;font-size:15px">
+                Thank you for choosing Snowdon23 AgroTrade. We look forward to a successful partnership!
+              </p>
+
+              <p style="color:#333;line-height:1.6;margin:15px 0 0">
+                Best regards,<br>
+                <strong style="color:#5B2C91">The Snowdon23 Team</strong>
+              </p>
+            </td>
+          </tr>
+
+          <!-- Contact Information -->
+          <tr>
+            <td style="background-color:#f8f9fa;padding:30px;text-align:center">
+              <p style="color:#5B2C91;font-weight:bold;margin:0 0 10px;font-size:16px">Need Help?</p>
+              <p style="color:#666;margin:5px 0;font-size:14px">📧 info@snowdon23resource.com</p>
+              <p style="color:#666;margin:5px 0;font-size:14px">📱 +44 7932 727451</p>
+              <p style="color:#666;margin:5px 0;font-size:14px">🌐 www.snowdon23resource.com</p>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="background-color:#2a1448;padding:20px;text-align:center">
+              <p style="color:#ffffff;margin:0;font-size:12px">&copy; 2025 Snowdon23 AgroTrade. All rights reserved.</p>
+              <p style="color:#ffffff;margin:10px 0 0;font-size:11px">Order [ORDER_NUMBER]</p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
