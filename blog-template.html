@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Snowdon23 AgroTrade</title>
+  <meta name="description" content="Agricultural insights, export tips, and industry news from Snowdon23 AgroTrade.">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;color:#333}
+    header{background:linear-gradient(135deg,#5B2C91 0%,#7B3CB8 100%);color:#fff;padding:1.2rem 0;position:fixed;width:100%;top:0;z-index:1000;box-shadow:0 2px 15px rgba(91,44,145,.3)}
+    nav{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 2rem}
+    .logo{font-size:1.4rem;font-weight:bold;color:#FFD700;text-decoration:none}
+    .nav-links{display:flex;gap:2rem;list-style:none}
+    .nav-links a{color:#fff;text-decoration:none;transition:.3s;font-weight:500}
+    .nav-links a:hover{color:#FFD700}
+    .hero-small{background:linear-gradient(135deg,#5B2C91 0%,#7B3CB8 100%);color:#fff;padding:8rem 2rem 4rem;text-align:center;margin-top:76px}
+    .hero-small h1{font-size:3rem;margin-bottom:1rem}
+    .container{max-width:1200px;margin:0 auto;padding:4rem 2rem}
+    .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:2rem;margin-top:2rem}
+    .blog-card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,.1);transition:.3s}
+    .blog-card:hover{transform:translateY(-5px);box-shadow:0 8px 30px rgba(0,0,0,.15)}
+    .blog-image{width:100%;height:220px;background:#5B2C91;display:flex;align-items:center;justify-content:center;font-size:4rem;color:#FFD700}
+    .blog-content{padding:1.5rem}
+    .blog-meta{display:flex;gap:1rem;font-size:.9rem;color:#666;margin-bottom:1rem}
+    .blog-category{background:#5B2C91;color:#fff;padding:.3rem .8rem;border-radius:15px;font-size:.85rem}
+    .blog-title{color:#5B2C91;font-size:1.4rem;margin-bottom:.8rem}
+    .blog-title:hover{color:#7B3CB8}
+    .blog-excerpt{color:#555;line-height:1.7;margin-bottom:1rem}
+    .read-more{color:#5B2C91;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem}
+    .read-more:hover{color:#7B3CB8}
+    .categories{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
+    .category-filter{padding:.7rem 1.5rem;background:#f8f9fa;border:2px solid #e0e0e0;border-radius:25px;cursor:pointer;transition:.3s;font-weight:500}
+    .category-filter:hover,.category-filter.active{background:#5B2C91;color:#fff;border-color:#5B2C91}
+    footer{background:#2a1448;color:#fff;text-align:center;padding:2rem;margin-top:4rem}
+    @media (max-width:768px){
+      .nav-links{display:none}
+      .hero-small h1{font-size:2rem}
+      .blog-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="logo">Snowdon23 AgroTrade</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero-small">
+    <h1>Agricultural Insights & News</h1>
+    <p>Expert articles on Nigerian agriculture and global export trends</p>
+  </section>
+
+  <div class="container">
+    <div class="categories">
+      <button class="category-filter active" onclick="filterPosts('all')">All Posts</button>
+      <button class="category-filter" onclick="filterPosts('export')">Export Tips</button>
+      <button class="category-filter" onclick="filterPosts('farming')">Farming</button>
+      <button class="category-filter" onclick="filterPosts('market')">Market Trends</button>
+      <button class="category-filter" onclick="filterPosts('quality')">Quality Control</button>
+    </div>
+
+    <div class="blog-grid">
+      
+      <!-- Blog Post 1 -->
+      <article class="blog-card" data-category="export">
+        <div class="blog-image">🌍</div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span class="blog-category">Export Tips</span>
+            <span>📅 March 15, 2025</span>
+          </div>
+          <h2 class="blog-title">
+            <a href="blog-post-1.html" style="text-decoration:none;color:inherit">
+              5 Essential Steps for Successful Agricultural Exports from Nigeria
+            </a>
+          </h2>
+          <p class="blog-excerpt">
+            Learn the critical steps every exporter needs to know to successfully ship Nigerian 
+            agricultural products to international markets. From documentation to quality control...
+          </p>
+          <a href="blog-post-1.html" class="read-more">Read More →</a>
+        </div>
+      </article>
+
+      <!-- Blog Post 2 -->
+      <article class="blog-card" data-category="quality">
+        <div class="blog-image">✅</div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span class="blog-category">Quality Control</span>
+            <span>📅 March 10, 2025</span>
+          </div>
+          <h2 class="blog-title">
+            <a href="blog-post-2.html" style="text-decoration:none;color:inherit">
+              How We Ensure Premium Quality in Every Cashew Kernel
+            </a>
+          </h2>
+          <p class="blog-excerpt">
+            Discover our comprehensive quality control process that ensures only the finest 
+            cashew kernels reach international buyers. From farm selection to final packaging...
+          </p>
+          <a href="blog-post-2.html" class="read-more">Read More →</a>
+        </div>
+      </article>
+
+      <!-- Blog Post 3 -->
+      <article class="blog-card" data-category="market">
+        <div class="blog-image">📈</div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span class="blog-category">Market Trends</span>
+            <span>📅 March 5, 2025</span>
+          </div>
+          <h2 class="blog-title">
+            <a href="blog-post-3.html" style="text-decoration:none;color:inherit">
+              Global Demand for Nigerian Sesame Seeds Reaches Record High
+            </a>
+          </h2>
+          <p class="blog-excerpt">
+            The international market for Nigerian sesame seeds is experiencing unprecedented 
+            growth. We analyze the key factors driving this demand and what it means for exporters...
+          </p>
+          <a href="blog-post-3.html" class="read-more">Read More →</a>
+        </div>
+      </article>
+
+      <!-- Blog Post 4 -->
+      <article class="blog-card" data-category="farming">
+        <div class="blog-image">🌱</div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span class="blog-category">Farming</span>
+            <span>📅 February 28, 2025</span>
+          </div>
+          <h2 class="blog-title">
+            <a href="blog-post-4.html" style="text-decoration:none;color:inherit">
+              Sustainable Farming Practices: How Nigerian Farmers Are Leading the Way
+            </a>
+          </h2>
+          <p class="blog-excerpt">
+            Nigerian farmers are adopting innovative sustainable practices that benefit both 
+            the environment and crop quality. Learn about organic farming methods and their impact...
+          </p>
+          <a href="blog-post-4.html" class="read-more">Read More →</a>
+        </div>
+      </article>
+
+      <!-- Blog Post 5 -->
+      <article class="blog-card" data-category="export">
+        <div class="blog-image">📦</div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span class="blog-category">Export Tips</span>
+            <span>📅 February 20, 2025</span>
+          </div>
+          <h2 class="blog-title">
+            <a href="blog-post-5.html" style="text-decoration:none;color:inherit">
+              Understanding International Shipping Terms: FOB, CIF, and CFR Explained
+            </a>
+          </h2>
+          <p class="blog-excerpt">
+            Confused by shipping terminology? We break down the most common international 
+            trade terms and help you choose the right option for your business needs...
+          </p>
+          <a href="blog-post-5.html" class="read-more">Read More →</a>
+        </div>
+      </article>
+
+      <!-- Blog Post 6 -->
+      <article class="blog-card" data-category="market">
+        <div class="blog-image">💰</div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span class="blog-category">Market Trends</span>
+            <span>📅 February 15, 2025</span>
+          </div>
+          <h2 class="blog-title">
+            <a href="blog-post-6.html" style="text-decoration:none;color:inherit">
+              Cocoa Bean Prices: Trends and Forecasts for 2025
+            </a>
+          </h2>
+          <p class="blog-excerpt">
+            An in-depth analysis of cocoa bean pricing trends, factors affecting the market, 
+            and expert forecasts for the coming year. Essential reading for buyers and sellers...
+          </p>
+          <a href="blog-post-6.html" class="read-more">Read More →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Snowdon23 AgroTrade. All rights reserved.</p>
+    <p>📧 info@snowdon23resource.com | 📱 +44 7932 727451</p>
+  </footer>
+
+  <script>
+    function filterPosts(category) {
+      const posts = document.querySelectorAll('.blog-card');
+      const buttons = document.querySelectorAll('.category-filter');
+      
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      
+      posts.forEach(post => {
+        if (category === 'all' || post.dataset.category === category) {
+          post.style.display = 'block';
+        } else {
+          post.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

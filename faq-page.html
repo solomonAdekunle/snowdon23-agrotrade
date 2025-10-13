@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frequently Asked Questions - Snowdon23 AgroTrade</title>
+  <meta name="description" content="Find answers to common questions about ordering, shipping, quality, and payment for Nigerian agricultural products.">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;color:#333}
+    header{background:linear-gradient(135deg,#5B2C91 0%,#7B3CB8 100%);color:#fff;padding:1.2rem 0;position:fixed;width:100%;top:0;z-index:1000;box-shadow:0 2px 15px rgba(91,44,145,.3)}
+    nav{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 2rem}
+    .logo{font-size:1.4rem;font-weight:bold;color:#FFD700;text-decoration:none}
+    .nav-links{display:flex;gap:2rem;list-style:none}
+    .nav-links a{color:#fff;text-decoration:none;transition:.3s;font-weight:500}
+    .nav-links a:hover{color:#FFD700}
+    .hero-small{background:linear-gradient(135deg,#5B2C91 0%,#7B3CB8 100%);color:#fff;padding:8rem 2rem 4rem;text-align:center;margin-top:76px}
+    .hero-small h1{font-size:3rem;margin-bottom:1rem}
+    .section{max-width:900px;margin:0 auto;padding:4rem 2rem}
+    .faq-categories{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:3rem}
+    .category-btn{padding:1rem;background:#f8f9fa;border:2px solid #e0e0e0;border-radius:10px;text-align:center;cursor:pointer;transition:.3s;font-weight:600;color:#5B2C91}
+    .category-btn:hover,.category-btn.active{background:#5B2C91;color:#fff;border-color:#5B2C91}
+    .faq-item{background:#fff;margin-bottom:1rem;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.1);overflow:hidden;transition:.3s}
+    .faq-item:hover{box-shadow:0 4px 15px rgba(0,0,0,.15)}
+    .faq-question{padding:1.5rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;color:#5B2C91;font-size:1.1rem}
+    .faq-question:hover{background:#f8f9fa}
+    .faq-icon{font-size:1.5rem;transition:.3s}
+    .faq-icon.active{transform:rotate(45deg)}
+    .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s;padding:0 1.5rem}
+    .faq-answer.active{max-height:500px;padding:0 1.5rem 1.5rem}
+    .faq-answer p{line-height:1.8;color:#555}
+    .search-box{width:100%;padding:1rem;border:2px solid #e0e0e0;border-radius:10px;font-size:1rem;margin-bottom:2rem}
+    .search-box:focus{outline:none;border-color:#5B2C91}
+    .cta-box{background:#5B2C91;color:#fff;padding:3rem;border-radius:15px;text-align:center;margin-top:3rem}
+    .cta-button{background:#FFD700;color:#5B2C91;padding:1rem 2.5rem;border:none;border-radius:50px;font-size:1.1rem;font-weight:600;text-decoration:none;display:inline-block;transition:.3s;margin-top:1rem}
+    .cta-button:hover{background:#FFC700}
+    footer{background:#2a1448;color:#fff;text-align:center;padding:2rem;margin-top:4rem}
+    @media (max-width:768px){.nav-links{display:none}.hero-small h1{font-size:2rem}}
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="logo">Snowdon23 AgroTrade</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero-small">
+    <h1>Frequently Asked Questions</h1>
+    <p>Everything you need to know about ordering from Snowdon23</p>
+  </section>
+
+  <section class="section">
+    <input type="text" class="search-box" id="searchBox" placeholder="🔍 Search for answers...">
+
+    <div class="faq-categories">
+      <div class="category-btn active" onclick="filterCategory('all')">All Questions</div>
+      <div class="category-btn" onclick="filterCategory('ordering')">Ordering</div>
+      <div class="category-btn" onclick="filterCategory('quality')">Quality</div>
+      <div class="category-btn" onclick="filterCategory('shipping')">Shipping</div>
+      <div class="category-btn" onclick="filterCategory('payment')">Payment</div>
+    </div>
+
+    <div id="faqContainer">
+      <!-- ORDERING -->
+      <div class="faq-item" data-category="ordering">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>What is the minimum order quantity?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Our minimum order quantity varies by product but typically starts at 1 metric ton for most items. For cashew kernels and sesame seeds, the MOQ is 1MT. For bulk buyers, we offer flexible quantities and better pricing. Contact us to discuss your specific needs.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-category="ordering">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>How do I place an order?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Placing an order is simple: (1) Contact us via email, WhatsApp, or our contact form with your product requirements, (2) We'll provide a detailed quote including pricing, specifications, and delivery timeline, (3) Once you approve, we'll send a proforma invoice, (4) Upon payment confirmation, we process and ship your order.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-category="ordering">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Can I request product samples?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! We offer samples for serious buyers. Sample costs and courier fees are borne by the buyer, but we deduct these costs from your first bulk order. Samples are typically 500g-1kg per product and help you verify quality before committing to larger quantities.</p>
+        </div>
+      </div>
+
+      <!-- QUALITY -->
+      <div class="faq-item" data-category="quality">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>How do you ensure product quality?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Quality is our top priority. We implement strict quality control at every stage: (1) Sourcing only from certified farms, (2) Manual sorting and inspection, (3) Laboratory testing for moisture content, impurities, and contamination, (4) Proper storage in climate-controlled facilities, (5) Final inspection before packaging. All products meet international export standards.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-category="quality">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Do you have quality certifications?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes, our products are HACCP compliant and meet international export standards. We can provide certificates of analysis, phytosanitary certificates, and certificates of origin with each shipment. For organic certification or other specific requirements, please contact us in advance.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-category="quality">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>What if I receive damaged or substandard products?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Customer satisfaction is paramount. If you receive damaged or substandard products, contact us immediately with photos and details. We'll investigate and resolve the issue through replacement, refund, or credit toward your next order, depending on the circumstances. All shipments are insured for your protection.</p>
+        </div>
+      </div>
+
+      <!-- SHIPPING -->
+      <div class="faq-item" data-category="shipping">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Which countries do you ship to?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>We currently export to 15+ countries across Europe, Asia, North America, and the Middle East. Our primary markets include the UK, Germany, Netherlands, UAE, Canada, USA, China, and India. If your country isn't listed, contact us—we're always expanding our reach.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-category="shipping">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>How long does shipping take?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Delivery times vary by destination and shipping method. Typically: Sea freight to Europe takes 4-6 weeks, to Asia 3-5 weeks, to North America 5-7 weeks. Air freight is available for urgent orders (7-14 days). Lead time includes order processing (3-5 days), customs clearance, and final delivery.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-category="shipping">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>What are the shipping terms?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>We offer flexible shipping terms: FOB (Free On Board), CIF (Cost, Insurance, and Freight), and CFR (Cost and Freight). We can also arrange door-to-door delivery for established clients. Discuss your preferred terms during the quotation process.</p>
+        </div>
+      </div>
+
+      <!-- PAYMENT -->
+      <div class="faq-item" data-category="payment">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>What payment methods do you accept?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>We accept: Bank Wire Transfer (T/T), Letter of Credit (L/C) for large orders, and Trade Assurance for verified buyers. For first-time buyers, we typically require 30-50% advance payment with the balance before shipping. Established clients may qualify for more flexible payment terms.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-category="payment">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Is my payment secure?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Absolutely. All transactions are conducted through secure banking channels. We provide official invoices, receipts, and can work with escrow services or trade insurance for your peace of mind. We're committed to transparent and secure business practices.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-category="payment">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Do you offer discounts for bulk orders?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! We offer competitive pricing for bulk purchases. The more you order, the better the rate. Long-term contracts and repeat customers also qualify for special pricing. Contact us with your volume requirements for a customized quote.</p>
+        </div>
+      </div>
+
+      <!-- GENERAL -->
+      <div class="faq-item" data-category="ordering">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Can I visit your facilities?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes, we welcome serious buyers to visit our facilities and farms in Nigeria. This allows you to see our operations, meet our team, and verify our quality standards firsthand. Please schedule visits in advance so we can arrange proper accommodation and farm tours.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-category="quality">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>What makes Snowdon23 different from other suppliers?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Our competitive advantages include: Direct relationships with farmers (no middlemen), Rigorous quality control processes, Transparent communication and documentation, Competitive pricing with no hidden costs, Reliable delivery schedules, Responsive customer service, and Years of export experience. We treat every client as a long-term partner.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h2 style="margin-bottom:1rem">Still Have Questions?</h2>
+      <p style="font-size:1.1rem;margin-bottom:1rem">Our team is ready to help you with any inquiries</p>
+      <a href="index.html#contact" class="cta-button">Contact Us Today</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Snowdon23 AgroTrade. All rights reserved.</p>
+    <p>📧 info@snowdon23resource.com | 📱 +44 7932 727451</p>
+  </footer>
+
+  <script>
+    function toggleFaq(element) {
+      const answer = element.nextElementSibling;
+      const icon = element.querySelector('.faq-icon');
+      const allAnswers = document.querySelectorAll('.faq-answer');
+      const allIcons = document.querySelectorAll('.faq-icon');
+      
+      allAnswers.forEach(a => {
+        if (a !== answer) a.classList.remove('active');
+      });
+      allIcons.forEach(i => {
+        if (i !== icon) i.classList.remove('active');
+      });
+      
+      answer.classList.toggle('active');
+      icon.classList.toggle('active');
+    }
+
+    function filterCategory(category) {
+      const items = document.querySelectorAll('.faq-item');
+      const buttons = document.querySelectorAll('.category-btn');
+      
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      
+      items.forEach(item => {
+        if (category === 'all' || item.dataset.category === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    document.getElementById('searchBox').addEventListener('input', function(e) {
+      const search = e.target.value.toLowerCase();
+      const items = document.querySelectorAll('.faq-item');
+      
+      items.forEach(item => {
+        const question = item.querySelector('.faq-question span').textContent.toLowerCase();
+        const answer = item.querySelector('.faq-answer p').textContent.toLowerCase();
+        
+        if (question.includes(search) || answer.includes(search)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

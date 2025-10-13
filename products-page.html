@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Products - Snowdon23 AgroTrade</title>
+  <meta name="description" content="Browse our premium Nigerian agricultural products including cashew kernels, shea nuts, sesame seeds, ginger, cocoa beans, and coffee beans.">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;color:#333}
+    header{background:linear-gradient(135deg,#5B2C91 0%,#7B3CB8 100%);color:#fff;padding:1.2rem 0;position:fixed;width:100%;top:0;z-index:1000;box-shadow:0 2px 15px rgba(91,44,145,.3)}
+    nav{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 2rem}
+    .logo{font-size:1.4rem;font-weight:bold;color:#FFD700;text-decoration:none}
+    .nav-links{display:flex;gap:2rem;list-style:none}
+    .nav-links a{color:#fff;text-decoration:none;transition:.3s;font-weight:500}
+    .nav-links a:hover{color:#FFD700}
+    .hero{background:linear-gradient(135deg,#5B2C91 0%,#7B3CB8 100%);color:#fff;padding:8rem 2rem 4rem;text-align:center;margin-top:76px}
+    .hero h1{font-size:3rem;margin-bottom:1rem}
+    .hero p{font-size:1.2rem;max-width:700px;margin:0 auto}
+    .container{max-width:1200px;margin:0 auto;padding:4rem 2rem}
+    .filters{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem;justify-content:center}
+    .filter-btn{padding:.8rem 1.8rem;background:#f8f9fa;border:2px solid #e0e0e0;border-radius:25px;cursor:pointer;transition:.3s;font-weight:500;color:#5B2C91}
+    .filter-btn:hover,.filter-btn.active{background:#5B2C91;color:#fff;border-color:#5B2C91}
+    .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:2.5rem}
+    .product-card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,.1);transition:.3s;display:flex;flex-direction:column}
+    .product-card:hover{transform:translateY(-8px);box-shadow:0 8px 30px rgba(0,0,0,.15)}
+    .product-image{width:100%;height:250px;background:#f8f9fa;object-fit:cover}
+    .product-badge{position:absolute;top:15px;right:15px;background:#FFD700;color:#5B2C91;padding:.5rem 1rem;border-radius:20px;font-size:.85rem;font-weight:600}
+    .product-content{padding:1.8rem;flex:1;display:flex;flex-direction:column}
+    .product-category{color:#7B3CB8;font-size:.9rem;font-weight:600;margin-bottom:.5rem}
+    .product-title{color:#5B2C91;font-size:1.5rem;margin-bottom:.8rem;font-weight:bold}
+    .product-desc{color:#555;line-height:1.7;margin-bottom:1.2rem;flex:1}
+    .product-features{list-style:none;margin:1rem 0;font-size:.9rem}
+    .product-features li{padding:.4rem 0;color:#666;display:flex;align-items:center;gap:.5rem}
+    .product-features li:before{content:'✓';color:#5B2C91;font-weight:bold}
+    .product-actions{display:flex;gap:1rem;margin-top:auto}
+    .btn-primary{flex:1;padding:.9rem;background:#FFD700;color:#5B2C91;border:none;border-radius:25px;font-weight:600;cursor:pointer;transition:.3s;text-decoration:none;text-align:center}
+    .btn-primary:hover{background:#FFC700;transform:translateY(-2px)}
+    .btn-secondary{flex:1;padding:.9rem;background:#f8f9fa;color:#5B2C91;border:2px solid #5B2C91;border-radius:25px;font-weight:600;cursor:pointer;transition:.3s;text-decoration:none;text-align:center}
+    .btn-secondary:hover{background:#5B2C91;color:#fff}
+    .cta-section{background:#5B2C91;color:#fff;padding:4rem 2rem;text-align:center;border-radius:15px;margin-top:4rem}
+    .cta-section h2{font-size:2.2rem;margin-bottom:1rem}
+    .cta-section p{font-size:1.1rem;margin-bottom:2rem;max-width:700px;margin-left:auto;margin-right:auto}
+    .cta-button{background:#FFD700;color:#5B2C91;padding:1rem 2.5rem;border:none;border-radius:50px;font-size:1.1rem;font-weight:600;text-decoration:none;display:inline-block;transition:.3s}
+    .cta-button:hover{background:#FFC700;transform:translateY(-2px)}
+    footer{background:#2a1448;color:#fff;text-align:center;padding:2rem;margin-top:4rem}
+    @media (max-width:768px){
+      .nav-links{display:none}
+      .hero h1{font-size:2rem}
+      .product-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="logo">Snowdon23 AgroTrade</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Our Premium Products</h1>
+    <p>Explore our range of export-quality Nigerian agricultural products, sourced directly from certified farms and processed to international standards</p>
+  </section>
+
+  <div class="container">
+    <div class="filters">
+      <button class="filter-btn active" onclick="filterProducts('all')">All Products</button>
+      <button class="filter-btn" onclick="filterProducts('nuts')">Nuts & Seeds</button>
+      <button class="filter-btn" onclick="filterProducts('spices')">Spices</button>
+      <button class="filter-btn" onclick="filterProducts('beans')">Beans</button>
+    </div>
+
+    <div class="product-grid">
+      
+      <!-- Cashew Kernels -->
+      <div class="product-card" data-category="nuts">
+        <div style="position:relative">
+          <img src="assets/images/cashew.png" alt="Premium Cashew Kernels" class="product-image" loading="lazy">
+          <span class="product-badge">Best Seller</span>
+        </div>
+        <div class="product-content">
+          <div class="product-category">Nuts & Seeds</div>
+          <h3 class="product-title">Cashew Kernels</h3>
+          <p class="product-desc">Premium grade whole cashew kernels available in W180, W240, W320, and W450 grades. Hand-sorted for superior quality.</p>
+          <ul class="product-features">
+            <li>Multiple grades available</li>
+            <li>Moisture: Max 5%</li>
+            <li>Export quality certified</li>
+          </ul>
+          <div class="product-actions">
+            <a href="cashew-kernels.html" class="btn-secondary">View Details</a>
+            <a href="index.html#contact" class="btn-primary">Get Quote</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shea Nuts -->
+      <div class="product-card" data-category="nuts">
+        <div style="position:relative">
+          <img src="assets/images/shea.png" alt="High-Quality Shea Nuts" class="product-image" loading="lazy">
+        </div>
+        <div class="product-content">
+          <div class="product-category">Nuts & Seeds</div>
+          <h3 class="product-title">Shea Nuts</h3>
+          <p class="product-desc">High-quality shea nuts with 45-55% fat content, ideal for cosmetics and food industries. Naturally sun-dried.</p>
+          <ul class="product-features">
+            <li>High butter content</li>
+            <li>Organic options available</li>
+            <li>Sustainably harvested</li>
+          </ul>
+          <div class="product-actions">
+            <a href="shea-nuts.html" class="btn-secondary">View Details</a>
+            <a href="index.html#contact" class="btn-primary">Get Quote</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sesame Seeds -->
+      <div class="product-card" data-category="nuts">
+        <div style="position:relative">
+          <img src="assets/images/sesame.png" alt="Premium Sesame Seeds" class="product-image" loading="lazy">
+          <span class="product-badge">High Demand</span>
+        </div>
+        <div class="product-content">
+          <div class="product-category">Seeds</div>
+          <h3 class="product-title">Sesame Seeds</h3>
+          <p class="product-desc">Premium white and brown sesame seeds with 48-52% oil content. 99% purity minimum, cleaned and sorted.</p>
+          <ul class="product-features">
+            <li>White & brown varieties</li>
+            <li>High oil content</li>
+            <li>99% minimum purity</li>
+          </ul>
+          <div class="product-actions">
+            <a href="sesame-seeds.html" class="btn-secondary">View Details</a>
+            <a href="index.html#contact" class="btn-primary">Get Quote</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ginger -->
+      <div class="product-card" data-category="spices">
+        <div style="position:relative">
+          <img src="assets/images/ginger.png" alt="Fresh Nigerian Ginger" class="product-image" loading="lazy">
+        </div>
+        <div class="product-content">
+          <div class="product-category">Spices</div>
+          <h3 class="product-title">Ginger</h3>
+          <p class="product-desc">Fresh Nigerian ginger with rich aroma and pungency. Available in split and unsplit varieties, naturally air-dried.</p>
+          <ul class="product-features">
+            <li>Split & unsplit available</li>
+            <li>Rich aroma & flavor</li>
+            <li>Natural drying process</li>
+          </ul>
+          <div class="product-actions">
+            <a href="ginger.html" class="btn-secondary">View Details</a>
+            <a href="index.html#contact" class="btn-primary">Get Quote</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cocoa Beans -->
+      <div class="product-card" data-category="beans">
+        <div style="position:relative">
+          <img src="assets/images/cocoa.png" alt="Premium Cocoa Beans" class="product-image" loading="lazy">
+        </div>
+        <div class="product-content">
+          <div class="product-category">Beans</div>
+          <h3 class="product-title">Cocoa Beans</h3>
+          <p class="product-desc">Premium fermented cocoa beans from Nigerian plantations. Grade I and II available with rich chocolate flavor.</p>
+          <ul class="product-features">
+            <li>Well-fermented & dried</li>
+            <li>Grade I & II available</li>
+            <li>Rich chocolate aroma</li>
+          </ul>
+          <div class="product-actions">
+            <a href="cocoa-beans.html" class="btn-secondary">View Details</a>
+            <a href="index.html#contact" class="btn-primary">Get Quote</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coffee Beans -->
+      <div class="product-card" data-category="beans">
+        <div style="position:relative">
+          <img src="assets/images/coffee.png" alt="Quality Robusta Coffee" class="product-image" loading="lazy">
+        </div>
+        <div class="product-content">
+          <div class="product-category">Beans</div>
+          <h3 class="product-title">Coffee Beans</h3>
+          <p class="product-desc">Quality Robusta coffee beans with strong flavor profile. Screen 18+, fully washed processing for premium taste.</p>
+          <ul class="product-features">
+            <li>Robusta variety</li>
+            <li>Fully washed process</li>
+            <li>Strong flavor profile</li>
+          </ul>
+          <div class="product-actions">
+            <a href="coffee-beans.html" class="btn-secondary">View Details</a>
+            <a href="index.html#contact" class="btn-primary">Get Quote</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-section">
+      <h2>Need Something Custom?</h2>
+      <p>We can accommodate special requirements, custom packaging, organic certifications, and more. Let us know what you need and we'll work with you to find the perfect solution.</p>
+      <a href="index.html#contact" class="cta-button">Request Custom Quote</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Snowdon23 AgroTrade. All rights reserved.</p>
+    <p>📧 info@snowdon23resource.com | 📱 +44 7932 727451</p>
+  </footer>
+
+  <script>
+    function filterProducts(category) {
+      const products = document.querySelectorAll('.product-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+      
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      
+      products.forEach(product => {
+        if (category === 'all' || product.dataset.category === category) {
+          product.style.display = 'flex';
+        } else {
+          product.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
