@@ -16,9 +16,9 @@ exports.handler = async (event, context) => {
     const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY;
     const AIRTABLE_BASE_ID = 'apptu7Bf35Da3H3wD';
     const AIRTABLE_TABLE_NAME = 'Request form';
-    const ADMIN_EMAILS = process.env.ADMIN_EMAILS; // e.g. info@snowdon23resource.com
-    const GMAIL_USER = process.env.GMAIL_USER;
-    const GMAIL_PASS = process.env.GMAIL_PASS;
+    const ADMIN_EMAILS = process.env.ADMIN_EMAILS; // e.g. info.team@snowdon23resource.com
+    const ZOHO_USER = process.env.ZOHO_USER;       // your Zoho email address
+    const ZOHO_PASS = process.env.ZOHO_PASS;       // your Zoho App Password
 
     // ✅ Ensure we send a valid array for Multiple Select fields
     const interestedProducts = Array.isArray(formData.product)
@@ -69,18 +69,20 @@ exports.handler = async (event, context) => {
       req.end();
     });
 
-    // ✅ Configure Gmail transporter
+    // ✅ Configure Zoho SMTP transporter
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: 'smtp.zoho.eu',
+      port: 465,
+      secure: true, // SSL
       auth: {
-        user: GMAIL_USER,
-        pass: GMAIL_PASS
+        user: ZOHO_USER,
+        pass: ZOHO_PASS
       }
     });
 
     // ✅ Email to Admin (you)
     const adminMailOptions = {
-      from: `"Snowdon23 AgroTrade" <${GMAIL_USER}>`,
+      from: `"Snowdon23 AgroTrade" <${ZOHO_USER}>`,
       to: ADMIN_EMAILS,
       subject: 'New Snowdon23 AgroTrade Form Submission',
       html: `
@@ -97,7 +99,7 @@ exports.handler = async (event, context) => {
 
     // ✅ Confirmation email to Buyer
     const buyerMailOptions = {
-      from: `"Snowdon23 AgroTrade" <${GMAIL_USER}>`,
+      from: `"Snowdon23 AgroTrade" <${ZOHO_USER}>`,
       to: formData.email,
       subject: 'Thank You for Contacting Snowdon23 AgroTrade',
       html: `
@@ -108,7 +110,7 @@ exports.handler = async (event, context) => {
         <hr>
         <p>Kind regards,<br><strong>Snowdon23 AgroTrade Team</strong><br>
         🌐 <a href="https://snowdon23-agrotrade.netlify.app">snowdon23-agrotrade.netlify.app</a><br>
-        📧 info@snowdon23resource.com</p>
+        📧 info.team@snowdon23resource.com</p>
       `
     };
 
