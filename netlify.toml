@@ -7,11 +7,13 @@
   node_bundler = "esbuild"
   external_node_modules = ["nodemailer"]
 
+# Redirect all routes to index.html for SPA behavior
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
+# Security Headers
 [[headers]]
   for = "/*"
   [headers.values]
@@ -19,3 +21,17 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# Cache static assets
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Environment variable hints (actual values set in Netlify UI)
+# AIRTABLE_API_KEY - Your Airtable API key
+# AIRTABLE_BASE_ID - Your Airtable base ID (if needed)
+# ADMIN_EMAILS - Email addresses to receive form submissions
+# ZOHO_USER - Your Zoho email address
+# ZOHO_PASS - Your Zoho app password (not regular password!)
