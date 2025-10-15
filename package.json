@@ -1,9 +1,21 @@
 {
   "name": "snowdon23-agrotrade",
   "version": "1.0.0",
-  "description": "Snowdon23 AgroTrade website functions",
-  "main": "index.js",
+  "description": "Snowdon23 AgroTrade website with Netlify serverless functions",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"No tests specified\"",
+    "dev": "netlify dev"
+  },
   "dependencies": {
     "nodemailer": "^6.9.9"
-  }
+  },
+  "devDependencies": {},
+  "keywords": [
+    "agrotrade",
+    "netlify-functions",
+    "contact-form"
+  ],
+  "author": "Snowdon23 Resources Ltd",
+  "license": "ISC"
 }
