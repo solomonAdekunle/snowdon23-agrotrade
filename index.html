@@ -5,17 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Snowdon23 AgroTrade - Premium Nigerian Cash Crops Exporter</title>
 
-   <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) with Consent Mode -->
+<script>
+  // Set default consent BEFORE loading gtag.js
+  (function() {
+    const consent = (localStorage.getItem('cookieConsent') === 'accepted');
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    window.gtag = window.gtag || gtag;
+
+    // Default: deny analytics unless already accepted
+    gtag('consent', 'default', {
+      'analytics_storage': consent ? 'granted' : 'denied'
+    });
+
+    // ⬇️ Hard block GA if not yet accepted
+    if (!consent) window['ga-disable-G-F174Q1LSSV'] = true;
+  })();
+</script>
+
+<!-- Load GA after consent defaults are set -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F174Q1LSSV"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-F174Q1LSSV');
 </script>
 
-  
+
   <!-- SEO Meta Tags -->
   <meta name="description" content="Snowdon23 AgroTrade exports premium Nigerian cash crops including cashew kernels, shea nuts, sesame seeds, ginger, cocoa beans, and coffee beans to global markets. Trusted supplier with 15+ countries served.">
   <meta name="keywords" content="Nigerian cashew exporter, shea nuts supplier, sesame seeds Nigeria, African agro products, cocoa beans Nigeria, coffee beans exporter, premium cash crops">
@@ -574,21 +590,28 @@
     });
   });
 
-  // Disable GA if declined
+   // Disable GA if declined
   function disableAnalytics() {
+    // hard-block hits
     window['ga-disable-G-F174Q1LSSV'] = true;
+    // update Consent Mode
+    if (typeof gtag === "function") {
+      gtag('consent', 'update', { 'analytics_storage': 'denied' });
+    }
   }
 
   // Enable GA if accepted
   function enableAnalytics() {
+    // remove hard block
+    window['ga-disable-G-F174Q1LSSV'] = false;
+    // update Consent Mode
     if (typeof gtag === "function") {
-      gtag('consent', 'update', {
-        'analytics_storage': 'granted'
-      });
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
     }
   }
 </script>
 
+ 
  
 </body>
 </html>
