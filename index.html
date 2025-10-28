@@ -539,5 +539,56 @@
       }
     });
   </script>
+   <!-- Cookie Consent Banner -->
+<div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #5B2C91; color: white; padding: 1rem 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; z-index: 9999; box-shadow: 0 -2px 10px rgba(0,0,0,0.2);">
+  <p style="margin: 0 0 1rem 0; font-size: 0.95rem;">
+    🍪 We use cookies to improve your experience and analyze site traffic. By clicking “Accept”, you agree to the use of cookies as described in our 
+    <a href="#privacy-policy" style="color: #FFD700; text-decoration: underline;">Privacy Policy</a>.
+  </p>
+  <div>
+    <button id="accept-cookies" style="background: #FFD700; color: #5B2C91; border: none; padding: 0.6rem 1.5rem; border-radius: 25px; font-weight: 600; cursor: pointer; margin: 0 0.5rem;">Accept</button>
+    <button id="decline-cookies" style="background: transparent; border: 2px solid #FFD700; color: #FFD700; padding: 0.6rem 1.5rem; border-radius: 25px; font-weight: 600; cursor: pointer;">Decline</button>
+  </div>
+</div>
+
+<script>
+  // Check cookie consent
+  document.addEventListener("DOMContentLoaded", function() {
+    const banner = document.getElementById("cookie-banner");
+    const consent = localStorage.getItem("cookieConsent");
+
+    if (consent === "accepted" || consent === "declined") {
+      banner.style.display = "none";
+    }
+
+    document.getElementById("accept-cookies").addEventListener("click", function() {
+      localStorage.setItem("cookieConsent", "accepted");
+      banner.style.display = "none";
+      enableAnalytics();
+    });
+
+    document.getElementById("decline-cookies").addEventListener("click", function() {
+      localStorage.setItem("cookieConsent", "declined");
+      banner.style.display = "none";
+      disableAnalytics();
+    });
+  });
+
+  // Disable GA if declined
+  function disableAnalytics() {
+    window['ga-disable-G-F174Q1LSSV'] = true;
+  }
+
+  // Enable GA if accepted
+  function enableAnalytics() {
+    if (typeof gtag === "function") {
+      gtag('consent', 'update', {
+        'analytics_storage': 'granted'
+      });
+    }
+  }
+</script>
+
+ 
 </body>
 </html>
